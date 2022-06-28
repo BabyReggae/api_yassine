@@ -13,14 +13,19 @@ import ay.entity.Token;
 public class TokenBean {
 
     @Inject
-    private static TokenDao tokenDao;
+    private TokenDao tokenDao;
 
     
     public Token getTokens(int id) {
         return tokenDao.getToken( id );
     }
 
-    public static Token addToken(Token token) {
+    public Token getTokenByValue(String value) {
+        return tokenDao.getTokenByValue(value);
+    }
+
+
+    public Token addToken(Token token) {
         return tokenDao.addToken(token);
     }
 

@@ -98,8 +98,12 @@ public class UserDao {
                 // Token persitedOne = TokenBean.addToken( );
                 user.settoken(gotcreated);
 
+
+
                 userTransaction.begin();
-                entityManager.persist(user);
+
+                entityManager.persist(gotcreated);
+                entityManager.merge(user);
                 userTransaction.commit();
 
                 return gotcreated;

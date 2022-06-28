@@ -2,6 +2,7 @@ package ay.dao;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 
@@ -21,6 +22,20 @@ public class TokenDao {
     public Token getToken(int id){
         return entityManager.createQuery("select c from Token c where c.id = " + id, Token.class).getSingleResult();
     }
+
+
+    public Token getTokenByValue(String value) {
+
+        try{
+            return entityManager.createQuery("select c from Token c where c.value = '" + value +"'", Token.class).getSingleResult();
+        } catch (NoResultException noResultException) {
+            Logger.getGlobal().info("Bearer not found in bdd");
+            return null;
+        }
+    }
+
+    
+
 
     public Token addToken(Token token){
             try{
