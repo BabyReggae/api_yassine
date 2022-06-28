@@ -23,7 +23,7 @@ Then :
 ' Configuration > Subsystems > Datasources &... > Datasources > "addDataSources" '
 
 
-See : ![WILD_FLY_PLUGIN](wildfly_plugin.PNG.PNG) 
+See : ![WILD_FLY_PLUGIN](wildfly_plugin.PNG) 
 See : ![WILD_FLY_CONF](wildfly_conf.PNG)
 
 ```CLI
